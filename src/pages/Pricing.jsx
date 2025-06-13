@@ -12,8 +12,8 @@ const Pricing = () => {
             title="No One-Size-Fits-All — Just What You Need"
             primaryText="Contact Us"
             primaryLink="/contact"
-            secondaryText="View Pricing"
-            secondaryLink="/pricing"
+            secondaryText="Call Us Today"
+            secondaryLink="tel:9723380991"
             backgroundImage="/img/heroImg.png"
         />
         <PricingIntroSection />
