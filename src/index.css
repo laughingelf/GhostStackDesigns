@@ -8,11 +8,20 @@
 
   color-scheme: light dark;
   /* color: rgba(255, 255, 255, 0.87); */
-  background-color: #000000;
+  background-color: #222222;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #1f2937 !important; /* tailwind's gray-800 */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 

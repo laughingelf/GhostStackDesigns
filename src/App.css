@@ -1,8 +1,60 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
+#navbar {
+  background-color: #222222;
+}
 
+.header-font {
+  font-family: "Antonio", sans-serif;
+  font-weight: 700;
+}
+
+.blue-word {
+  color: rgb(13, 182, 204);
+}
+
+.blue-btn {
+  background-color:rgb(13, 182, 204);
+  color: whitesmoke;
+}
+
+.blueon-white-btn {
+  background-color:rgb(13, 182, 204);
+  color: whitesmoke;
+}
+
+.blueon-white-btn:hover {
+  background-color: rgb(2, 123, 139);
+  /* color: #222222; */
+}
+
+.blue-btn:hover {
+  background-color: whitesmoke;
+  color: rgb(39, 39, 39);
+  text-decoration: underline;
+}
+
+.white-btn {
+  background-color: whitesmoke;
+  color: rgb(13, 182, 204);
+}
+
+.white-btn:hover {
+  background-color: rgb(13, 182, 204);
+  color: rgb(39, 39, 39);
+  text-decoration: underline;
+}
+
+.word-link {
+  font-family: "Antonio", sans-serif;
+  color: whitesmoke;
+}
+
+.word-link:hover {
+  color: rgb(13, 182, 204);
+}

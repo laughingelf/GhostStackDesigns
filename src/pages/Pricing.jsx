@@ -1,27 +1,27 @@
-import AboutUsSection from "../components/AboutUs";
+import FlatRateServicesSection from "../components/FlatRateServices";
 import HeroSection from "../components/Hero";
-import OurProcessSection from "../components/OurProcess";
+import PricingIntroSection from "../components/PricingIntro";
+import PricingPlansSection from "../components/PricingPlans";
 import VideoOverlaySection from "../components/WebsiteVideo";
 
-
-const About = () => {
+const Pricing = () => {
 
     return (
         <>
         <HeroSection
-            title="The Story Behind GhostStack"
+            title="No One-Size-Fits-All — Just What You Need"
             primaryText="Contact Us"
             primaryLink="/contact"
             secondaryText="View Pricing"
             secondaryLink="/pricing"
             backgroundImage="/img/heroImg.png"
         />
-        <AboutUsSection />
-        <OurProcessSection />
+        <PricingIntroSection />
+        <PricingPlansSection />
+        <FlatRateServicesSection />
         <VideoOverlaySection />
-
         </>
     )
 }
 
-export default About;
+export default Pricing;
