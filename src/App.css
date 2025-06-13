@@ -14,6 +14,11 @@
   font-weight: 700;
 }
 
+.par-font {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+}
+
 .blue-word {
   color: rgb(13, 182, 204);
 }
@@ -29,7 +34,7 @@
 }
 
 .blueon-white-btn:hover {
-  background-color: rgb(2, 123, 139);
+  background-color: #027b8b;
   /* color: #222222; */
 }
 

@@ -30,9 +30,14 @@ const OurProcessSection = () => {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl leading-relaxed text-gray-100 mb-8 header-font"
+          className="text-xl leading-relaxed text-gray-100 mb-8 par-font"
         >
-          We make getting online simple. Once you’re on board, we’ll get to know your business—either through a quick questionnaire or a friendly meeting if you’re local. From there, we handle everything: writing content, building your site, and ensuring it’s ready to go live. Most projects are up and running in about 2 to 3 weeks, but we’ll keep you updated every step of the way. Your success is our priority, and we’re here to make the process smooth, stress-free, and enjoyable.
+          We make getting online simple. Once you’re on board, we’ll get to know your business—either 
+          through a quick questionnaire or a friendly meeting if you’re local. From there, we handle 
+          everything: writing content, building your site, and ensuring it’s ready to go live. Most 
+          projects are up and running in about 2 to 3 weeks, but we’ll keep you updated every step of 
+          the way. Your success is our priority, and we’re here to make the process smooth, stress-free, 
+          and enjoyable.
         </motion.p>
 
         <motion.div

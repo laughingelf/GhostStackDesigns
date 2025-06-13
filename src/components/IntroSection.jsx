@@ -45,7 +45,7 @@ const IntroSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-lg md:text-xl text-gray-300 leading-relaxed header-font"
+            className="text-lg md:text-xl text-gray-300 leading-relaxed par-font"
           >
             At GhostStack Designs, we focus on building high-performance, custom-coded websites for small 
             businesses across the U.S. Our goal is to help local companies stay competitive in a world that's 

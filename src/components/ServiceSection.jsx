@@ -20,7 +20,7 @@ const ServicesSection = () => {
           <h2 className="blue-word text-2xl md:text-4xl font-bold mb-6 header-font">
             Custom-Coded Websites and Wix Builds — Tailored to Your Business
           </h2>
-          <p className="text-xl leading-relaxed text-gray-100 header-font">
+          <p className="text-xl leading-relaxed text-gray-100 par-font">
             At GhostStack Designs, we believe every business deserves a professional online presence that’s both effective and uniquely theirs.
             That’s why we offer custom website design—hand-coded with clean HTML and CSS—for unbeatable speed, security, and performance.
             For small businesses who prefer a drag-and-drop builder, we also offer Wix website development. No matter your choice, we build
@@ -58,7 +58,7 @@ const ServicesSection = () => {
               className="flex flex-col items-center "
             >
               <h3 className="text-3xl blue-word font-semibold mb-2 header-font">{block.title}</h3>
-              <p className="text-xl text-gray-100 header-font max-w-3xl ">{block.text}</p>
+              <p className="text-xl text-gray-100 par-font max-w-3xl ">{block.text}</p>
             </motion.div>
           ))}
         </div>
@@ -112,7 +112,7 @@ const ServicesSection = () => {
                 className="bg-gray-50 p-6 rounded-xl shadow-md hover:shadow-lg transition"
               >
                 <h4 className="text-2xl font-semibold mb-2 header-font">{service.title}</h4>
-                <p className="text-lg text-gray-700 mb-4 header-font">{service.desc}</p>
+                <p className="text-lg text-gray-700 mb-4 par-font">{service.desc}</p>
                 <MotionLink
                     to="/pricing"
                     className="blue-word text-lg hover:underline header-font font-semibold inline-block"

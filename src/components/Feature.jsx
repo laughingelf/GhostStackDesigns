@@ -54,7 +54,7 @@ const FeatureOverview = () => {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-lg text-gray-800 max-w-3xl mx-auto header-font mb-8"
+          className="text-lg text-gray-800 max-w-3xl mx-auto par-font mb-8"
         >
           Get a professionally built, fully responsive 5-page website with no upfront costs. For $175/month, 
           you'll receive design, development, hosting, and content updates each month — all backed by a 6-month 
@@ -95,7 +95,7 @@ const FeatureOverview = () => {
             <h4 className="text-xl font-semibold mb-2 header-font">
               {feature.title}
             </h4>
-            <p className="text-sm text-gray-300 header-font">
+            <p className="text-sm text-gray-300 par-font">
               {feature.text}
             </p>
           </motion.div>

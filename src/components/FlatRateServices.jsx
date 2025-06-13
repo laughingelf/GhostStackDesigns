@@ -70,7 +70,7 @@ const FlatRateServicesSection = () => {
           >
             <h4 className="text-3xl font-semibold mb-1 header-font">{service.title}</h4>
             <p className="text-2xl blue-word header-font font-bold mb-3">{service.price}</p>
-            <p className="text-gray-800 mb-6 text-lg header-font">{service.desc}</p>
+            <p className="text-gray-800 mb-6 text-lg par-font">{service.desc}</p>
             <Link
               to="/contact"
               className="inline-block blueon-white-btn header-font shadow-lg shadow-gray-800 hover:shadow-lg hover:scale-105 px-5 py-2 rounded-xl font-medium text-md hover:bg-blue-700 transition"

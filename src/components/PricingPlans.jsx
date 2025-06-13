@@ -71,7 +71,7 @@ const PricingPlansSection = () => {
             <div>
               <h3 className="text-2xl text-white underline font-bold header-font mb-2">{plan.title}</h3>
               <p className="blue-word header-font text-3xl font-semibold text-blue-600 mb-4">{plan.price}</p>
-              <p className="text-gray-100 header-font text-lg mb-6">{plan.description}</p>
+              <p className="text-gray-100 par-font text-lg mb-6">{plan.description}</p>
               <ul className="space-y-2 mb-6">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="text-gray-100 text-md">

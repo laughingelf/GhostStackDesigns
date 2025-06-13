@@ -18,7 +18,7 @@ const PricingIntroSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg md:text-xl text-gray-300 header-font"
+          className="text-lg md:text-xl text-gray-300 par-font"
         >
           At GhostStack Designs, we know that every small business has unique needs and budgets — and 
           your website should reflect that. That’s why we offer flexible website pricing that fits your 
