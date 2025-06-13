@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroMain = () => {
   return (
@@ -34,12 +35,12 @@ const HeroMain = () => {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
-            <button className="text-2xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium header-font blue-btn transition hover:scale-105">
+            <Link to='/contact' className="text-2xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium header-font blue-btn transition hover:scale-105">
               Get Started
-            </button>
-            <button className="white-btn text-2xl px-6 py-3 rounded-xl font-medium header-font hover:scale-105 transition">
+            </Link>
+            <Link to='/pricing' className="white-btn text-2xl px-6 py-3 rounded-xl font-medium header-font hover:scale-105 transition">
               Services
-            </button>
+            </Link>
           </motion.div>
         </div>
 
