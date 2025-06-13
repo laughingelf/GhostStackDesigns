@@ -8,7 +8,7 @@ const Contact = () => {
         <HeroSection
             title="Questions? Ideas? Let’s Talk."
             primaryText="Call Us Today"
-            primaryLink="/contact"
+            primaryLink="tel:9723380991"
             secondaryText="View Pricing"
             secondaryLink="/pricing"
             backgroundImage="/img/heroImg.png"
