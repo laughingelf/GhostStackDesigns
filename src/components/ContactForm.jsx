@@ -1,13 +1,60 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import SuccessModal from "./SuccessModal";
 
 const ContactForm = () => {
   useEffect(() => {
     document.body.style.backgroundColor = "#222222";
   }, []);
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+  const encode = (data) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "contact",
+        name,
+        email,
+        phone,
+        message,
+      }),
+    })
+      .then(() => {
+        setShowModal(true);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      })
+      .catch((error) => alert("Something went wrong. Please try again."));
+  };
+
   return (
     <section className="w-full py-24 px-6 text-gray-800">
+      <SuccessModal
+        show={showModal}
+        onClose={() => setShowModal(false)}
+        title="GhostStack Designs"
+      >
+        <p>
+          Thanks for reaching out to GhostStack Designs! We got your message and we’ll get back to
+          you within 24 hours. Talk soon!
+        </p>
+      </SuccessModal>
+
       <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
         {/* Logo Section */}
         <motion.div
@@ -20,12 +67,13 @@ const ContactForm = () => {
           <img
             src="/img/ghost-only-logo.png"
             alt="GhostStack Designs Logo"
-            className="mx-auto w-96 h-auto" // Larger logo
+            className="mx-auto w-96 h-auto"
           />
         </motion.div>
 
         {/* Form Section */}
         <motion.form
+          onSubmit={handleSubmit}
           name="contact"
           method="POST"
           data-netlify="true"
@@ -36,7 +84,6 @@ const ContactForm = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Netlify Hidden Fields */}
           <input type="hidden" name="form-name" value="contact" />
           <p className="hidden">
             <label>
@@ -58,6 +105,8 @@ const ContactForm = () => {
                 name="name"
                 id="name"
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -71,6 +120,8 @@ const ContactForm = () => {
                 name="email"
                 id="email"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -84,6 +135,8 @@ const ContactForm = () => {
                 name="phone"
                 id="phone"
                 required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 className="w-full text-gray-800 border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -97,6 +150,8 @@ const ContactForm = () => {
                 id="message"
                 rows="5"
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
             </div>
