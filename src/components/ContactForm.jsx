@@ -76,6 +76,7 @@ const ContactForm = () => {
           onSubmit={handleSubmit}
           name="contact"
           method="POST"
+          action='/'
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           className="w-full lg:w-1/2 bg-white p-8 rounded-xl text-gray-800 shadow-lg"
