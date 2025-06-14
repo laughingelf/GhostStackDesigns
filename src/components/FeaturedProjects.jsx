@@ -7,14 +7,14 @@ const projects = [
   {
     name: "Lone Star Property Maintenance",
     description:
-      "Lone Star Property Maintenance offers expert exterior services across Texas — from pressure washing to fencing and property clean-up. Their one-page website highlights services, builds trust, and makes it easy for customers to reach out.",
+      "Lone Star Property Maintenance provides expert exterior services throughout Texas — from pressure washing and fencing to full property clean-ups. Their custom-built 5-page website showcases services, builds credibility, and makes it simple for customers to get in touch.",
     image: "/img/lonestar.png",
     url: "https://lonestarpropertymaintenance.com/",
   },
   {
     name: "Luma SportznFun",
     description:
-      "Luma SportznFun brings kids and families together through sports, games, and community events. Their vibrant one-page site highlights programs, promotes upcoming events, and makes it easy for parents to get involved and stay connected.",
+      "Luma SportznFun brings kids and families together through sports, games, and community events. Their vibrant multi-page website showcases programs, promotes upcoming events, and makes it easy for parents to get involved and stay connected.",
     image: "/img/luma.png",
     url: "https://www.sportznfun.com/",
   },
