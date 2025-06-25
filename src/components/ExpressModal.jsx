@@ -24,6 +24,7 @@ const ExpressAddOnModal = ({ onClose, onCheckout }) => {
     const selectedAddons = addons.filter((addon) =>
       selected.includes(addon.id)
     );
+    console.log('selected add ons', selectedAddons)
     onCheckout(selectedAddons);
   };
 

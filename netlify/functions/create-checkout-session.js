@@ -2,7 +2,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
   const { addOns } = JSON.parse(event.body);
-  
+  console.log('stripe')
 
   // Map frontend addOn IDs to Stripe Price IDs (from your Stripe dashboard)
   const priceMap = {
