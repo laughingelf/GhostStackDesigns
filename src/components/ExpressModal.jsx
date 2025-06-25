@@ -46,7 +46,7 @@ const ExpressAddOnModal = ({ onClose, onCheckout }) => {
           <p className="font-semibold text-lg header-font underline text-gray-800 mb-2">
             Included by default:
           </p>
-          <ul className="list-disc ml-1 text-md text-gray-700">
+          <ul className="list-none ml-1 text-md text-gray-700">
             <li>Google Map Embed</li>
             <li>Custom Contact Form</li>
             <li>Basic SEO Setup</li>
