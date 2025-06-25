@@ -49,8 +49,8 @@ exports.handler = async (event) => {
       payment_method_types: ['card'],
       line_items,
       mode: 'payment',
-      success_url: 'http://localhost:8888/success?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: 'http://localhost:8888/cancel',
+      success_url: 'http://ghoststackdesigns.com/success?session_id={CHECKOUT_SESSION_ID}',
+      cancel_url: 'http://ghoststackdesigns.com/cancel',
     });
     
 
