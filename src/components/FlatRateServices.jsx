@@ -3,36 +3,43 @@ import { Link } from "react-router-dom";
 
 const services = [
   {
-    title: "Google My Business Creation",
+    id: "businessProfile",
+    title: "Google Business Profile Setup",
     price: "$50",
-    desc: "Boost your local visibility with a fully optimized Google Business Profile. Attract more customers and make it easier for people to find you in search results and on Google Maps.",
+    desc: "Boost your local visibility with a fully optimized Google Business Profile. Attract more customers and make it easier to be found in search results and on Google Maps.",
   },
   {
-    title: "Single Page Portfolio (Hosting $10/mo)",
-    price: "$150",
-    desc: "Showcase your work beautifully with a simple, mobile-friendly single-page site. Perfect for freelancers, artists, and tradespeople who need a quick, effective online presence.",
-  },
-  {
-    title: "Single Page Website (Hosting $10/mo)",
-    price: "$150",
-    desc: "Highlight your services, contact info, and business details all in one place. A great option for small businesses looking for an affordable, professional digital home.",
-  },
-  {
-    title: "Basic SEO Setup",
+    id: "seo",
+    title: "Basic SEO Boost",
     price: "$50",
-    desc: "Lay the groundwork for higher search engine rankings. We set up essential SEO elements like meta tags, alt attributes, and page speed checks to help your site get found.",
+    desc: "Lay the foundation for search engine visibility with optimized meta tags, alt text, and improved page structure to help your site get noticed.",
   },
   {
-    title: "Social Media Account Setup",
+    id: "socialMedia",
+    title: "Social Media Setup",
     price: "$50",
-    desc: "Establish a consistent, professional brand on social media. We’ll set up your profiles with optimized bios, contact links, and branding so you can start connecting with customers.",
+    desc: "We’ll create branded, professional profiles on Facebook, Instagram, or your preferred platform — set up and ready for you to post and grow.",
   },
   {
-    title: "Domain Setup",
+    id: "domain",
+    title: "Domain Setup / Configuration",
     price: "$50",
-    desc: "Secure your own domain name and connect it seamlessly to your website and email. We handle DNS, SSL, and email routing so everything works smoothly from day one.",
+    desc: "Own your domain and connect it with confidence. We handle setup, DNS configuration, SSL, and email routing for a smooth and secure launch.",
+  },
+  {
+    id: "logo",
+    title: "Basic Logo Design",
+    price: "$99",
+    desc: "A simple, clean logo to give your business a professional identity. Includes 1–2 initial concepts and basic revisions to get it right.",
+  },
+  {
+    id: "graphics",
+    title: "Branded Launch Graphics",
+    price: "$59",
+    desc: "Make your launch look sharp across social platforms with professionally designed graphics that match your website and branding.",
   },
 ];
+
 
 const FlatRateServicesSection = () => {
   return (
@@ -73,9 +80,9 @@ const FlatRateServicesSection = () => {
             <p className="text-gray-800 mb-6 text-lg par-font">{service.desc}</p>
             <Link
               to="/contact"
-              className="inline-block blueon-white-btn header-font shadow-lg shadow-gray-800 hover:shadow-lg hover:scale-105 px-5 py-2 rounded-xl font-medium text-md hover:bg-blue-700 transition"
+              className="inline-block blueon-white-btn header-font shadow-lg shadow-gray-800 hover:shadow-lg hover:scale-105 px-5 py-2 rounded-xl font-medium text-lg hover:bg-blue-700 transition"
             >
-              Contact Us
+              Start Now
             </Link>
           </motion.div>
         ))}
