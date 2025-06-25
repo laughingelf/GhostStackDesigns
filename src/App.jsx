@@ -9,6 +9,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import PageTransitionWrapper from './components/FadePageOut'
+import SuccessfulPage from './pages/SuccessfulPage'
+import StartExpressProject from './pages/StartExpressPage'
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
           <Route path='/services' element={<Services/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/pricing' element={<Pricing />} />
+          <Route path='/success' element={<SuccessfulPage />} />
+          <Route path='/start-express-project' element={<StartExpressProject />} />
           <Route path='*' element={<NoPage/>} />
         </Routes>
       <Footer />

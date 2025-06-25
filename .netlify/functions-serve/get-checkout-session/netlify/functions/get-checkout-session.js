@@ -8937,28 +8937,13 @@ var require_stripe_cjs_node = __commonJS({
 var stripe = require_stripe_cjs_node()(process.env.STRIPE_SECRET_KEY);
 exports.handler = async (event) => {
   const session_id = event.queryStringParameters.session_id;
-  if (!session_id) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: "Missing session_id" })
-    };
-  }
   try {
     const session = await stripe.checkout.sessions.retrieve(session_id, {
-      expand: ["line_items.data.price.product"]
-    });
-    const lineItems = await stripe.checkout.sessions.listLineItems(session_id, {
-      expand: ["data.price.product"]
+      expand: ["line_items", "customer_details"]
     });
     return {
       statusCode: 200,
-      body: JSON.stringify({
-        customer_email: session.customer_details.email,
-        line_items: lineItems.data.map((item) => ({
-          description: item.description,
-          amount_total: item.amount_total
-        }))
-      })
+      body: JSON.stringify(session)
     };
   } catch (error) {
     return {

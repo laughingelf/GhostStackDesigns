@@ -1,64 +1,93 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import ExpressAddOnModal from "./ExpressModal";
+import { useNavigate } from "react-router-dom";
 
 const plans = [
   {
-    title: "Starter Plan",
-    price: "$300",
-    description: "Perfect for startups and small businesses that need a professional online presence fast.",
+    title: "GhostStack Express",
+    price: "$99 One-Time",
+    description:
+      "A fast, done-for-you one-pager delivered in 48 hours. Perfect for freelancers, hustlers, and small shops.",
     features: [
-      "Template-Based Starter Site",
-      "1–3 Pages Included",
-      "Basic Contact Form",
+      "1 Custom Page",
       "Mobile-Responsive Design",
-      "Basic SEO Setup",
-      "Flat-Rate Content Edits: $50/mo",
-      "Email Support",
+      "Includes Logo, Services & Contact Info",
+      "Delivered as Live Link + Download",
+      "Add-Ons Available (Gallery, Reviews, etc.)",
+      "Optional Hosting: +$25/mo (Fully Managed)",
     ],
+    cta: "Start Now",
   },
   {
-    title: "Pro Plan",
-    price: "$900",
-    description: "Ideal for growing businesses that want a custom-coded website with more features and flexibility.",
+    title: "Growth Plan",
+    price: "$599 + $25/mo Hosting",
+    description:
+      "A 5-page custom site designed to grow with your business. Includes SEO and pro design tailored to your brand.",
     features: [
-      "Custom Design & Development",
-      "5 Pages Included ($75/page after 5)",
-      "Flat-Rate Content Edits: $50/mo",
-      "Optional Blog Integration: $250",
+      "5 Custom Pages",
+      "Branded Styling & Colors",
+      "SEO Optimization",
       "Custom Contact Form",
-      "Email Support",
+      "Optional Blog (+$250)",
+      "Flat-Rate Content Edits: $50/mo",
+      "Fully Managed Hosting: $25/mo (Static) or $35/mo (With Blog/CMS Integration)",
     ],
+    cta: "Get Started",
   },
   {
-    title: "Monthly Plan — Wix or Custom-Coded",
-    price: "$175/mo",
-    description: "Perfect for businesses that prefer a predictable monthly payment and ongoing support.",
+    title: "Monthly Plan",
+    price: "$175/month",
+    description:
+      "No upfront cost. Hosting, updates, support, and a fully managed 5-page custom site. All-in-one solution.",
     features: [
-      "Design & Development (Custom or Wix)",
-      "Hosting Included",
-      "5 Pages Included ($75/page after 5)",
-      "Unlimited Edits",
-      "Optional Blog: $250",
-      "24/7 Support",
-      "Lifetime Updates",
+      "Zero Upfront Cost",
+      "5-Page Custom Website",
+      "Hosting & Domain Included",
+      "Unlimited Content Edits",
+      "Ongoing Support & Updates",
+      "6-Month Minimum Commitment",
     ],
+    cta: "Subscribe Now",
   },
   {
-    title: "Ecommerce Solutions",
-    price: "Starting at $2,500",
-    description: "Custom-built online stores designed for performance and secure payment integration.",
+    title: "Premium Build",
+    price: "Starting at $1,500",
+    description:
+      "For businesses that need advanced functionality, booking systems, e-commerce, or a totally custom experience.",
     features: [
-      "Custom E-Commerce Store Design",
-      "Flexible, Customizable Solutions",
-      "Easy Product Management",
-      "Secure Payment Integration",
+      "Fully Custom Design",
+      "E-Commerce or Booking Integration",
+      "Multi-Page Layouts & CMS Options",
+      "Advanced Styling & Animation",
+      "Creative Consultation",
+      "Custom Quote Based on Needs",
+      "Hosting: $35–$50/mo Based on Features",
     ],
+    cta: "Request a Quote",
   },
 ];
 
 const PricingPlansSection = () => {
+  const [showExpressModal, setShowExpressModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleCheckout = async (addOns) => {
+    const selectedIds = addOns.map((item) => item.id);
+    console.log('selected ids', selectedIds)
+    const res = await fetch("/.netlify/functions/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ addOns: selectedIds }),
+    });
+
+    const { url } = await res.json();
+    window.location.href = url;
+  };
+
   return (
     <section className="bg-white text-gray-900 py-24 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {plans.map((plan, i) => (
           <motion.div
             key={plan.title}
@@ -66,29 +95,41 @@ const PricingPlansSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             viewport={{ once: true }}
-            className="border bg-black/80 border-gray-200 rounded-2xl shadow-md p-6 flex flex-col justify-between"
+            className="bg-black/90 border border-gray-300 rounded-2xl shadow-lg p-4 flex flex-col justify-between"
           >
             <div>
               <h3 className="text-2xl text-white underline font-bold header-font mb-2">{plan.title}</h3>
-              <p className="blue-word header-font text-3xl font-semibold text-blue-600 mb-4">{plan.price}</p>
-              <p className="text-gray-100 par-font text-lg mb-6">{plan.description}</p>
-              <ul className="space-y-2 mb-6">
+              <p className="blue-word text-3xl font-semibold mb-4 header-font">{plan.price}</p>
+              <p className="text-gray-100 text-lg mb-6 header-font">{plan.description}</p>
+              <ul className="space-y-2 mb-6 list-none list-inside text-gray-100">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="text-gray-100 text-md">
-                    • {feature}
-                  </li>
+                  <li key={idx}>{feature}</li>
                 ))}
               </ul>
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="mt-auto blue-btn px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition"
+              className="blue-btn mt-auto px-6 py-3 rounded-xl text-xl font-semibold hover:bg-blue-700 transition header-font"
+              onClick={() => {
+                if (plan.title === "GhostStack Express") {
+                  setShowExpressModal(true);
+                } else {
+                  navigate('/contact')
+                }
+              }}
             >
-              Contact Us Today
+              {plan.cta}
             </motion.button>
           </motion.div>
         ))}
       </div>
+
+      {showExpressModal && (
+        <ExpressAddOnModal
+          onClose={() => setShowExpressModal(false)}
+          onCheckout={handleCheckout}
+        />
+      )}
     </section>
   );
 };
