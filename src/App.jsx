@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import PageTransitionWrapper from './components/FadePageOut'
 import SuccessfulPage from './pages/SuccessfulPage'
 import StartExpressProject from './pages/StartExpressPage'
+import SuccessfulFlatratePage from './pages/SuccessfulFlatratePage'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path='/pricing' element={<Pricing />} />
           <Route path='/success' element={<SuccessfulPage />} />
           <Route path='/start-express-project' element={<StartExpressProject />} />
+          <Route path='/flat-rate-success' element={<SuccessfulFlatratePage />} />
           <Route path='*' element={<NoPage/>} />
         </Routes>
       <Footer />

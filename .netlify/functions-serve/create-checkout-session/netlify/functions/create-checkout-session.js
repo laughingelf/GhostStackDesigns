@@ -8940,7 +8940,6 @@ exports.handler = async (event) => {
   console.log("stripe");
   const priceMap = {
     express: "price_1RbwifP9nARwRH7i8gTzdZ3n",
-    // replace with your actual Price ID
     gallery: "price_1RbwlWP9nARwRH7iPjpO045N",
     reviews: "price_1RbwnRP9nARwRH7i909hxrYv",
     businessProfile: "price_1RcDt1P9nARwRH7i2iZRvGF3",

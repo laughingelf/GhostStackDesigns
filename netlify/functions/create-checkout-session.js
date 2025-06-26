@@ -6,7 +6,7 @@ exports.handler = async (event) => {
 
   // Map frontend addOn IDs to Stripe Price IDs (from your Stripe dashboard)
   const priceMap = {
-    express: 'price_1RbwifP9nARwRH7i8gTzdZ3n', // replace with your actual Price ID
+    express: 'price_1RbwifP9nARwRH7i8gTzdZ3n', 
     gallery: 'price_1RbwlWP9nARwRH7iPjpO045N',
     reviews: 'price_1RbwnRP9nARwRH7i909hxrYv',
     businessProfile: 'price_1RcDt1P9nARwRH7i2iZRvGF3',
@@ -19,7 +19,7 @@ exports.handler = async (event) => {
 
 // Test Data 
 //   const priceMap = {
-//     express: 'price_1Rcpzc03WGniZBk1x4FKm8V4', // replace with your actual Price ID
+//     express: 'price_1Rcpzc03WGniZBk1x4FKm8V4', 
 //     gallery: 'price_1Rcr4D03WGniZBk1F4TzTx6D',
 //     reviews: 'price_1Rcr4j03WGniZBk15s5UTrMf',
 //     businessProfile: 'price_1Rcr5G03WGniZBk1QkJwGreH',

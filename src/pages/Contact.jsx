@@ -14,6 +14,7 @@ const Contact = () => {
             backgroundImage="/img/heroImg.png"
         />
         <ContactForm />
+        
         </>
     )
 }

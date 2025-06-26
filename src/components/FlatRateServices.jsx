@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import FlatRateAddOnModal from "./FlatRateAddOnModal";
 
 const services = [
   {
@@ -42,6 +44,30 @@ const services = [
 
 
 const FlatRateServicesSection = () => {
+
+    const [showFlatRateModal, setShowFlatRateModal] = useState(false);
+    const [selectedBaseProduct, setSelectedBaseProduct] = useState(null);
+
+  
+    const handleFlatRateCheckout = async (items) => {
+      const itemIds = items.map((item) => item.id); // base product + any add-ons
+      console.log('handling', items)
+      const res = await fetch("/.netlify/functions/create-flatrate-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }), // send array
+      });
+
+      const { url } = await res.json();
+      if (url) {
+        window.location.href = url;
+      } else {
+        console.error("No URL returned from Stripe session:", res);
+      }
+    };
+
+
+
   return (
     <section className="w-full text-gray-900 py-24 px-6">
       <div className="max-w-6xl mx-auto text-center mb-16">
@@ -78,13 +104,35 @@ const FlatRateServicesSection = () => {
             <h4 className="text-3xl font-semibold mb-1 header-font">{service.title}</h4>
             <p className="text-2xl blue-word header-font font-bold mb-3">{service.price}</p>
             <p className="text-gray-800 mb-6 text-lg par-font">{service.desc}</p>
-            <Link
-              to="/contact"
+            {/* <button
+              onClick={() => handleFlatRateCheckout(service.id)}
               className="inline-block blueon-white-btn header-font shadow-lg shadow-gray-800 hover:shadow-lg hover:scale-105 px-5 py-2 rounded-xl font-medium text-lg hover:bg-blue-700 transition"
             >
               Start Now
-            </Link>
+            </button> */}
+            <button
+              onClick={() => {
+                setSelectedBaseProduct(service.id);
+                setShowFlatRateModal(true);
+              }}
+              className="inline-block blueon-white-btn header-font shadow-lg shadow-gray-800 hover:shadow-lg hover:scale-105 px-5 py-2 rounded-xl font-medium text-lg hover:bg-blue-700 transition"
+            >
+              Start Now
+            </button>
+
+            {showFlatRateModal && selectedBaseProduct && (
+              <FlatRateAddOnModal
+                baseProductId={selectedBaseProduct}
+                onClose={() => {
+                  setSelectedBaseProduct(null);
+                  setShowFlatRateModal(false);
+                }}
+                onCheckout={handleFlatRateCheckout}
+              />
+            )}
           </motion.div>
+
+          
         ))}
       </div>
     </section>
