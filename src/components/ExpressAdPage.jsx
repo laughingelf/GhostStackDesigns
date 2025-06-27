@@ -1,7 +1,24 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ExpressAddOnModal from "./ExpressModal";
 
 const GhostStackExpressAdPage = () => {
+    const [showExpressModal, setShowExpressModal] = useState(false);
+
+      const handleCheckout = async (addOns) => {
+            const selectedIds = addOns.map((item) => item.id);
+            console.log('selected ids', selectedIds)
+            const res = await fetch("/.netlify/functions/create-checkout-session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ addOns: selectedIds }),
+            });
+
+            const { url } = await res.json();
+            window.location.href = url;
+        };
+
   return (
     <section className="bg-black text-white px-6 py-24">
       <div className="max-w-6xl mx-auto space-y-24">
@@ -19,9 +36,13 @@ const GhostStackExpressAdPage = () => {
           <p className="text-xl md:text-2xl par-font text-gray-300 mb-10 max-w-3xl mx-auto">
             GhostStack Express is a done-for-you one-pager built to get your business online fast, look professional, and attract customers — all for just <strong className="text-cyan-400">$99</strong>.
           </p>
-          <Link to="/express-checkout" className="blue-btn header-font text-xl px-8  py-4 font-semibold rounded-xl shadow-md shadow-black hover:scale-105 transition">
+          <button className="blue-btn header-font text-xl px-8  py-4 font-semibold rounded-xl shadow-md shadow-black hover:scale-105 transition"
+            onClick={() => {
+                setShowExpressModal(true);
+            }}
+          >
             Start Your Site Now
-          </Link>
+          </button>
         </motion.div>
 
         {/* PAIN POINTS */}
@@ -79,9 +100,13 @@ const GhostStackExpressAdPage = () => {
           <p className="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
             Includes site build, revisions, final handoff, and hosting options.
           </p>
-          <Link to="/express-checkout" className="blue-btn text-xl px-10 py-4 rounded-xl font-semibold hover:scale-105 transition">
+          <button className="blue-btn text-xl px-10 py-4 rounded-xl font-semibold hover:scale-105 transition"
+            onClick={() => {
+                setShowExpressModal(true);
+            }}
+          >
             Claim My Spot →
-          </Link>
+          </button>
           <p className="mt-8 text-sm text-gray-400">Delivered in 48 hours or less. Limited spots each week.</p>
         </div>
 
@@ -94,6 +119,12 @@ const GhostStackExpressAdPage = () => {
           </p>
         </div>
       </div>
+          {showExpressModal && (
+                <ExpressAddOnModal
+                onClose={() => setShowExpressModal(false)}
+                onCheckout={handleCheckout}
+                />
+            )}
     </section>
   );
 };

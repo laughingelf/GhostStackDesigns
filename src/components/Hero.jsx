@@ -19,8 +19,20 @@ const HeroSection = ({
         className="absolute top-0 left-0 w-full h-full object-cover translate-y-20 md:translate-y-0 md:object-scale-down z-0"
       />
 
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-black bg-opacity-100 z-10"></div> */}
+      {/* Animated Retro Image */}
+      <Link to='/ghoststack-express'>
+        <motion.img
+          src="/img/ghoststack-express.png"
+          alt="GhostStack Express"
+          className="absolute top-30 right-2 md:top-8 md:right-14 w-24 md:w-36 z-50"
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </Link>
 
       {/* Content */}
       <div className="relative z-20 px-6 translate-y-20 md:translate-y-0">
@@ -33,7 +45,6 @@ const HeroSection = ({
           {title}
         </motion.h1>
 
-        {/* Subtitle with green link */}
         <motion.p
           className="text-lg md:text-xl text-gray-300 mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +60,6 @@ const HeroSection = ({
           </Link>
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           className="flex header-font flex-col sm:flex-row gap-4 justify-center"
           initial={{ opacity: 0, y: 20 }}

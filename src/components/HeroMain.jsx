@@ -13,6 +13,21 @@ const HeroMain = () => {
     <section className="w-full text-white mt-25 py-10 px-6">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
 
+          {/* Animated Retro Image */}
+          <Link to='/ghoststack-express'>
+            <motion.img
+              src="/img/ghoststack-express.png"
+              alt="GhostStack Express"
+              className="absolute top-35 right-5 md:top-30 md:right-24 w-24 md:w-36 z-50"
+              animate={{ y: [0, -10, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          </Link>
+
         {/* Left Content with staggered animation */}
         <div className="md:w-2/3 text-center md:text-left mb-10 md:mb-0">
           <motion.h1

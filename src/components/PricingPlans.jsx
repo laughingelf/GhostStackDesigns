@@ -73,7 +73,6 @@ const plans = [
 
 const PricingPlansSection = () => {
   const [showExpressModal, setShowExpressModal] = useState(false);
-  const navigate = useNavigate();
 
   const [showContactModal, setShowContactModal] = useState(false);
   const [showContactFormModal, setShowContactFormModal] = useState(false)
