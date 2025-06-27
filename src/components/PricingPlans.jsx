@@ -81,7 +81,6 @@ const PricingPlansSection = () => {
 
   const handleCheckout = async (addOns) => {
     const selectedIds = addOns.map((item) => item.id);
-    console.log('selected ids', selectedIds)
     const res = await fetch("/.netlify/functions/create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

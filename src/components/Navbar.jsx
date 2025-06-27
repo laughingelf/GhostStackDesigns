@@ -56,7 +56,7 @@ const Navbar = () => {
         >
           <Link to="/">
             <img
-              src="/img/ghost-only-logo.png"
+              src="/img/nav-logo.png"
               alt="GhostStack Designs Logo"
               className="w-30 h-auto transition-transform cursor-pointer"
             />
