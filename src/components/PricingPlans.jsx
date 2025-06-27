@@ -2,6 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ExpressAddOnModal from "./ExpressModal";
 import { useNavigate } from "react-router-dom";
+import ContactChoiceModal from "./ContactChoiceModal";
+import ContactFormModal from "./ContactFormModal";
+import { FastField } from "formik";
 
 const plans = [
   {
@@ -72,6 +75,11 @@ const PricingPlansSection = () => {
   const [showExpressModal, setShowExpressModal] = useState(false);
   const navigate = useNavigate();
 
+  const [showContactModal, setShowContactModal] = useState(false);
+  const [showContactFormModal, setShowContactFormModal] = useState(false)
+
+
+
   const handleCheckout = async (addOns) => {
     const selectedIds = addOns.map((item) => item.id);
     console.log('selected ids', selectedIds)
@@ -114,15 +122,35 @@ const PricingPlansSection = () => {
                 if (plan.title === "GhostStack Express") {
                   setShowExpressModal(true);
                 } else {
-                  navigate('/contact')
+                  // navigate('/contact')
+                  setShowContactModal(true)
                 }
               }}
             >
               {plan.cta}
             </motion.button>
+            {showContactModal && (
+              <ContactChoiceModal
+                onClose={() => setShowContactModal(false)}
+                onScheduleClick={() => {
+                  setShowContactModal(false);
+                  // setShowCalendarModal(true); // Triggers calendar modal
+                }}
+                onShowContactForm={() => {
+                  setShowContactModal(false);
+                  setShowContactFormModal(true);
+                }}
+              />
+            )}
           </motion.div>
         ))}
       </div>
+
+      {showContactFormModal && (
+        <ContactFormModal
+        onClose={() => setShowContactFormModal(false)}
+        />
+      )}
 
       {showExpressModal && (
         <ExpressAddOnModal
