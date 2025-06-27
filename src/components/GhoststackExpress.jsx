@@ -25,7 +25,7 @@ const GhostStackExpressPromo = () => {
             GhostStack Express: A Website in Just 48 Hours
           </h2>
           <p className="text-lg text-gray-700 mb-6 par-font">
-            Need a professional website—fast? <strong>GhostStack Express</strong> delivers a
+            Need a professional website—fast? <span className="text-xl blue-word underline">GhostStack Express</span> delivers a
             custom one-page site in just two days. Perfect for freelancers, side hustlers, small shops,
             and anyone who needs to make a strong digital impression—without the wait or complexity.
           </p>
@@ -41,7 +41,7 @@ const GhostStackExpressPromo = () => {
 
           <Link
             to="/ghoststack-express"
-            className="inline-block blue-btn px-8 py-4 rounded-xl text-lg font-semibold header-font shadow-md hover:scale-105 transition"
+            className="inline-block blueon-white-btn px-8 py-4 rounded-xl text-lg font-semibold header-font shadow-md hover:scale-105 transition"
           >
             Learn More & Get Started →
           </Link>
@@ -55,9 +55,9 @@ const GhostStackExpressPromo = () => {
           viewport={{ once: true }}
         >
           <img
-            src="/img/ghoststack-express-preview.png" // Replace with actual image path
+            src="/img/ghostexpress-ex2.png" // Replace with actual image path
             alt="GhostStack Express Preview"
-            className="w-full max-w-md mx-auto rounded-2xl shadow-lg"
+            className="w-full max-w-md mx-auto rounded-2xl"
           />
         </motion.div>
       </div>
