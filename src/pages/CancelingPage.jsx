@@ -7,14 +7,15 @@ const CancelingPage = () => {
 
     return (
         <>
-        {/* <HeroSection
-            title="What We Offer"
-            primaryText="Contact Us"
-            primaryLink="/contact"
-            secondaryText="View Pricing"
-            secondaryLink="/pricing"
-            backgroundImage="/img/heroImg.png"
-        /> */}
+        <HeroSection
+        title="Changed Your Mind?"
+        primaryText="Try Again"
+        primaryLink="/pricing"
+        secondaryText="Need Help?"
+        secondaryLink="/contact"
+        backgroundImage="/img/heroImg.png"
+        />
+
         <CancelPage />        
 
         </>

@@ -6,14 +6,15 @@ const SuccessfulPage = () => {
 
     return (
         <>
-        {/* <HeroSection
-            title="What We Offer"
-            primaryText="Contact Us"
-            primaryLink="/contact"
-            secondaryText="View Pricing"
-            secondaryLink="/pricing"
-            backgroundImage="/img/heroImg.png"
-        /> */}
+        <HeroSection
+        title="You're All Set!"
+        primaryText="Start Your Project"
+        primaryLink="/start-express-project"
+        secondaryText="Need to Send Files?"
+        secondaryLink="/contact"
+        backgroundImage="/img/heroImg.png"
+        />
+
         <SuccessPage />        
 
         </>

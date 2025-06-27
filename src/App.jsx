@@ -12,6 +12,9 @@ import PageTransitionWrapper from './components/FadePageOut'
 import SuccessfulPage from './pages/SuccessfulPage'
 import StartExpressProject from './pages/StartExpressPage'
 import SuccessfulFlatratePage from './pages/SuccessfulFlatratePage'
+import CancelingPage from './pages/CancelingPage'
+import Faq from './pages/Faq'
+import ExpressFunnel from './pages/ExpressFunnel'
 
 
 function App() {
@@ -31,7 +34,10 @@ function App() {
           <Route path='/services' element={<Services/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/pricing' element={<Pricing />} />
+          <Route path='/faq' element={<Faq />} />
+          <Route path='/ghoststack-express' element={<ExpressFunnel />} />
           <Route path='/success' element={<SuccessfulPage />} />
+          <Route path='/cancel' element={<CancelingPage />} />
           <Route path='/start-express-project' element={<StartExpressProject />} />
           <Route path='/flat-rate-success' element={<SuccessfulFlatratePage />} />
           <Route path='*' element={<NoPage/>} />

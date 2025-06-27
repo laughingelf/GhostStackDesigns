@@ -28,7 +28,7 @@ exports.handler = async (event) => {
       payment_method_types: ["card"],
       line_items,
       success_url: "https://ghoststackdesigns.com/flat-rate-success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://ghoststackdesigns.com/cancel",
+      cancel_url: "https://localhost:8888/cancel",
     });
 
     return {
