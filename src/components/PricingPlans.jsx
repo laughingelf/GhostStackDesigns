@@ -122,7 +122,6 @@ const PricingPlansSection = () => {
                 if (plan.title === "GhostStack Express") {
                   setShowExpressModal(true);
                 } else {
-                  // navigate('/contact')
                   setShowContactModal(true)
                 }
               }}

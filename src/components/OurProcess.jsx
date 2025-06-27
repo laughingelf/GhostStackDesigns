@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ContactChoiceModal from "./ContactChoiceModal";
+import ContactFormModal from "./ContactFormModal";
+import { useState } from "react";
 
 const OurProcessSection = () => {
+
+    const [showContactModal, setShowContactModal] = useState(false);
+    const [showContactFormModal, setShowContactFormModal] = useState(false)
+
+
   return (
     <section className="w-full text-gray-800 py-24 px-6">
       <div className="max-w-4xl mx-auto text-center">
@@ -46,12 +54,35 @@ const OurProcessSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
-          <Link
-            to="/contact"
+          <button
             className="inline-block blue-btn header-font px-6 py-3 rounded-xl font-medium text-2xl transition"
+            onClick={() => {
+                setShowContactModal(true)
+              }}  
           >
             Start the Process
-          </Link>
+          </button>
+
+          {showContactModal && (
+                    <ContactChoiceModal
+                      onClose={() => setShowContactModal(false)}
+                      onScheduleClick={() => {
+                        setShowContactModal(false);
+                        // setShowCalendarModal(true); // Triggers calendar modal
+                      }}
+                      onShowContactForm={() => {
+                        setShowContactModal(false);
+                        setShowContactFormModal(true);
+                      }}
+                    />
+                  )}
+
+                  {showContactFormModal && (
+                    <ContactFormModal
+                    onClose={() => setShowContactFormModal(false)}
+                    />
+                  )}
+
         </motion.div>
       </div>
     </section>

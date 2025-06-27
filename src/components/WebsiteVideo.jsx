@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ContactChoiceModal from "./ContactChoiceModal";
+import ContactFormModal from "./ContactFormModal";
+import { useState } from "react";
 
 const VideoOverlaySection = () => {
+      const [showContactModal, setShowContactModal] = useState(false);
+      const [showContactFormModal, setShowContactFormModal] = useState(false)
+      
   return (
     <section className="relative w-full h-[50vh] overflow-hidden">
       {/* Background Video */}
@@ -37,12 +43,33 @@ const VideoOverlaySection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Link
-            to="/contact"
-            className="inline-block blue-btn translate-y-10 text-white px-6 py-3 text-2xl rounded-xl font-medium header-font hover:scale-105 transition"
+          <button className="inline-block blue-btn translate-y-10 text-white px-6 py-3 text-2xl rounded-xl font-medium header-font hover:scale-105 transition"
+            onClick={() => {
+                setShowContactModal(true)
+              }}          
           >
             Let's Build Yours
-          </Link>
+          </button>
+
+              {showContactModal && (
+                    <ContactChoiceModal
+                      onClose={() => setShowContactModal(false)}
+                      onScheduleClick={() => {
+                        setShowContactModal(false);
+                        // setShowCalendarModal(true); // Triggers calendar modal
+                      }}
+                      onShowContactForm={() => {
+                        setShowContactModal(false);
+                        setShowContactFormModal(true);
+                      }}
+                    />
+                  )}
+
+                  {showContactFormModal && (
+                    <ContactFormModal
+                    onClose={() => setShowContactFormModal(false)}
+                    />
+                  )}
         </motion.div>
       </div>
     </section>

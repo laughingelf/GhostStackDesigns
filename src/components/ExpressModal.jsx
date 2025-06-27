@@ -78,7 +78,7 @@ const ExpressAddOnModal = ({ onClose, onCheckout }) => {
 
         <button
           onClick={handleCheckout}
-          className="mt-6 w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 rounded-lg transition"
+          className="mt-6 w-full blueon-white-btn header-font text-lg text-gray-800 font-semibold py-3 rounded-lg hover:scale-105 transition"
         >
           Continue to Checkout
         </button>

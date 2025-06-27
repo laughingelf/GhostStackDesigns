@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ContactChoiceModal from "./ContactChoiceModal";
+import ContactFormModal from "./ContactFormModal";
 
 const HeroMain = () => {
+    const [showContactModal, setShowContactModal] = useState(false);
+    const [showContactFormModal, setShowContactFormModal] = useState(false)
+
+
   return (
     <section className="w-full text-white mt-25 py-10 px-6">
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
@@ -35,10 +42,34 @@ const HeroMain = () => {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
-            <Link to='/contact' className="text-2xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium header-font blue-btn transition hover:scale-105">
+            <button
+              className="text-2xl bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium header-font blue-btn transition hover:scale-105"
+              onClick={() => {
+                setShowContactModal(true)
+              }}
+              >
               Get Started
-            </Link>
-            <Link to='/pricing' className="white-btn text-2xl px-6 py-3 rounded-xl font-medium header-font hover:scale-105 transition">
+            </button>
+                  {showContactModal && (
+                    <ContactChoiceModal
+                      onClose={() => setShowContactModal(false)}
+                      onScheduleClick={() => {
+                        setShowContactModal(false);
+                        // setShowCalendarModal(true); // Triggers calendar modal
+                      }}
+                      onShowContactForm={() => {
+                        setShowContactModal(false);
+                        setShowContactFormModal(true);
+                      }}
+                    />
+                  )}
+
+                  {showContactFormModal && (
+                    <ContactFormModal
+                    onClose={() => setShowContactFormModal(false)}
+                    />
+                  )}
+            <Link to='/services' className="white-btn text-2xl px-6 py-3 rounded-xl font-medium header-font hover:scale-105 transition">
               Services
             </Link>
           </motion.div>

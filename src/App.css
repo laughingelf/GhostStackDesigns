@@ -30,12 +30,12 @@
 
 .blueon-white-btn {
   background-color:rgb(13, 182, 204);
-  color: whitesmoke;
+  color: #222222;
 }
 
 .blueon-white-btn:hover {
   background-color: #027b8b;
-  /* color: #222222; */
+  color: whitesmoke;
 }
 
 .blue-btn:hover {

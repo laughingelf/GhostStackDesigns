@@ -72,35 +72,35 @@ const ServicesSection = () => {
             {[
               {
                 title: "Custom Website Development",
-                desc: "Bespoke websites built with clean HTML and CSS for speed, security, and full control.",
+                desc: "Bespoke websites built with clean HTML and CSS for performance, security, and full control.",
               },
               {
                 title: "Wix Website Development",
-                desc: "Drag-and-drop websites designed for usability, mobile optimization, and performance.",
+                desc: "Drag-and-drop Wix builds designed for usability, mobile optimization, and SEO best practices.",
               },
               {
                 title: "Google Business Profile Setup",
-                desc: "Get found on Maps and Search with a polished, fully optimized business listing.",
+                desc: "Fully optimized Google listing for Maps and Search visibility. Stand out locally and build trust.",
               },
               {
-                title: "Single Page Portfolio Website",
-                desc: "Showcase your work with a fast-loading, scrollable one-page portfolio.",
+                title: "Basic SEO Boost",
+                desc: "Meta tags, alt text, and site structure tuned to give your website a better shot at ranking.",
               },
               {
-                title: "Single Page Business Website",
-                desc: "A streamlined digital home focused on conversion, contact, and local SEO.",
+                title: "Social Media Setup",
+                desc: "We’ll professionally create your Facebook, Instagram, or other platform profiles — ready to go.",
               },
               {
-                title: "Basic SEO Setup",
-                desc: "Meta tags, alt text, page speed checks, and more for a strong search foundation.",
+                title: "Domain Setup / Configuration",
+                desc: "Secure and configure your domain, DNS, SSL, and custom email for a complete, reliable setup.",
               },
               {
-                title: "Social Media Account Setup",
-                desc: "Professional setup of business profiles on Facebook, Instagram, and LinkedIn.",
+                title: "Basic Logo Design",
+                desc: "Simple, clean logo to give your brand a polished identity. Includes initial concept and revision.",
               },
               {
-                title: "Domain & Email Setup",
-                desc: "We help you purchase, configure, and connect your domain, email, SSL, and DNS.",
+                title: "Branded Launch Graphics",
+                desc: "Launch-ready social media graphics to match your new site and branding across platforms.",
               },
             ].map((service, i) => (
               <motion.div
@@ -114,19 +114,20 @@ const ServicesSection = () => {
                 <h4 className="text-2xl font-semibold mb-2 header-font">{service.title}</h4>
                 <p className="text-lg text-gray-700 mb-4 par-font">{service.desc}</p>
                 <MotionLink
-                    to="/pricing"
-                    className="blue-word text-lg hover:underline header-font font-semibold inline-block"
-                    whileHover={{
+                  to="/pricing"
+                  className="blue-word text-xl hover:underline header-font font-semibold inline-block"
+                  whileHover={{
                     x: 4,
                     scale: 1.05,
-                    color: "#027b8b", // blue-600
+                    color: "#027b8b",
                     transition: { type: "spring", stiffness: 300 },
-                    }}
+                  }}
                 >
-                    Learn More →
+                  Learn More →
                 </MotionLink>
               </motion.div>
-            ))}
+            ))
+            }
           </div>
           {/* CTA Button */}
             <div className="flex justify-center mt-16">

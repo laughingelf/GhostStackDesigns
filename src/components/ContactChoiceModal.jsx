@@ -46,7 +46,7 @@ const ContactChoiceModal = ({ onClose, onShowContactForm }) => {
             data-cal-namespace="30min"
             data-cal-config='{"layout":"month_view"}'
             onClick={onClose}
-            className="bg-cyan-600 hover:bg-cyan-700 text-white text-xl py-3 rounded-xl font-semibold transition header-font"
+            className="blueon-white-btn text-xl py-3 rounded-xl font-semibold hover:scale-102 transition header-font"
           >
             📞 Schedule a Phone Call
           </button>
@@ -57,7 +57,7 @@ const ContactChoiceModal = ({ onClose, onShowContactForm }) => {
               onClose();
               onShowContactForm(); // <- trigger contact modal
             }}
-            className="bg-gray-200 hover:bg-gray-300 text-gray-900 text-xl py-3 rounded-xl font-semibold transition header-font"
+            className="bg-gray-300 hover:bg-gray-200 text-gray-900 text-xl py-3 rounded-xl font-semibold hover:scale-102 transition header-font"
           >
             ✉️ Send an Email
           </button>
