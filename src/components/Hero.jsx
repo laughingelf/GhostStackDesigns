@@ -10,7 +10,7 @@ const HeroSection = ({
   backgroundImage = "/img/heroImg.png",
 }) => {
   return (
-    <section className="md:mt-35 relative w-full h-[60vh] overflow-hidden flex items-center justify-center text-center">
+    <section className="md:mt-20 relative w-full h-[60vh] overflow-hidden flex items-center justify-center text-center">
       
       {/* Background Image */}
       <img
@@ -24,7 +24,7 @@ const HeroSection = ({
         <motion.img
           src="/img/ghoststack-express.png"
           alt="GhostStack Express"
-          className="absolute top-30 right-2 md:top-8 md:right-14 w-24 md:w-36 z-50"
+          className="absolute top-28 right-2 md:top-8 md:right-14 w-24 md:w-36 z-40"
           animate={{ y: [0, -10, 0] }}
           transition={{
             duration: 2,
