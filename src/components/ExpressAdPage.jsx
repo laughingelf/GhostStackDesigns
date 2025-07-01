@@ -100,7 +100,7 @@ const GhostStackExpressAdPage = () => {
           <p className="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
             Includes site build, revisions, final handoff, and hosting options.
           </p>
-          <button className="blue-btn text-xl px-10 py-4 rounded-xl font-semibold hover:scale-105 transition"
+          <button className="blue-btn header-font text-2xl px-10 py-4 rounded-xl font-semibold hover:scale-105 transition"
             onClick={() => {
                 setShowExpressModal(true);
             }}

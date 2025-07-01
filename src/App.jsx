@@ -15,6 +15,7 @@ import SuccessfulFlatratePage from './pages/SuccessfulFlatratePage'
 import CancelingPage from './pages/CancelingPage'
 import Faq from './pages/Faq'
 import ExpressFunnel from './pages/ExpressFunnel'
+import PrivacyPage from './pages/PrivacyPage'
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path='/ghoststack-express' element={<ExpressFunnel />} />
           <Route path='/success' element={<SuccessfulPage />} />
           <Route path='/cancel' element={<CancelingPage />} />
+          <Route path='/privacy-policy' element={<PrivacyPage />} />
           <Route path='/start-express-project' element={<StartExpressProject />} />
           <Route path='/flat-rate-success' element={<SuccessfulFlatratePage />} />
           <Route path='*' element={<NoPage/>} />
