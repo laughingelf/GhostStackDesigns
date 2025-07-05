@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /428391/jamesscott
 
 Sitemap: https://ghoststackdesigns.com/sitemap.xml

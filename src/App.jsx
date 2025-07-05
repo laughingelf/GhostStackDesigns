@@ -16,6 +16,7 @@ import CancelingPage from './pages/CancelingPage'
 import Faq from './pages/Faq'
 import ExpressFunnel from './pages/ExpressFunnel'
 import PrivacyPage from './pages/PrivacyPage'
+import JamesScottAgencyPage from './components/SalesPages/JamesScott'
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
           <Route path='/start-express-project' element={<StartExpressProject />} />
           <Route path='/flat-rate-success' element={<SuccessfulFlatratePage />} />
           <Route path='*' element={<NoPage/>} />
+          {/* Sales Pages */}
+          <Route path='/428391/jamesscott' element={<JamesScottAgencyPage />} />
         </Routes>
       <Footer />
       </BrowserRouter>
