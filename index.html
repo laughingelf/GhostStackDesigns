@@ -68,5 +68,13 @@
       <input type="hidden" name="form-name" value="express-project" />
     </form>
 
+    <!-- Hidden Netlify form (no uploads) -->
+    <form name="website-intake" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="business_name" />
+      <input type="email" name="contact_email" />
+      <!-- Include any other fields if you want, but at least one input is enough for indexing -->
+    </form>
+
+
   </body>
 </html>

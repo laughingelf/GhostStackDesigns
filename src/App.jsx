@@ -17,6 +17,8 @@ import Faq from './pages/Faq'
 import ExpressFunnel from './pages/ExpressFunnel'
 import PrivacyPage from './pages/PrivacyPage'
 import JamesScottAgencyPage from './components/SalesPages/JamesScott'
+import MainIntakePage from './pages/MainIntakePage'
+import ThankYou from './pages/ThankYouPage'
 
 
 function App() {
@@ -43,9 +45,11 @@ function App() {
           <Route path='/privacy-policy' element={<PrivacyPage />} />
           <Route path='/start-express-project' element={<StartExpressProject />} />
           <Route path='/flat-rate-success' element={<SuccessfulFlatratePage />} />
+          <Route path='/website-intake' element={<MainIntakePage />} />
+          <Route path='/thank-you' element={<ThankYou />} />
           <Route path='*' element={<NoPage/>} />
           {/* Sales Pages */}
-          <Route path='/428391/jamesscott' element={<JamesScottAgencyPage />} />
+          {/* <Route path='/428391/jamesscott' element={<JamesScottAgencyPage />} /> */}
         </Routes>
       <Footer />
       </BrowserRouter>
