@@ -68,12 +68,46 @@
       <input type="hidden" name="form-name" value="express-project" />
     </form>
 
-    <!-- Hidden Netlify form (no uploads) -->
+    <!-- Hidden Netlify "indexing" form: include ALL field names -->
     <form name="website-intake" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="business_name" />
+      <input type="text" name="tagline" />
+      <input type="text" name="contact_name" />
       <input type="email" name="contact_email" />
-      <!-- Include any other fields if you want, but at least one input is enough for indexing -->
+      <input type="text" name="phone" />
+      <input type="text" name="address" />
+      <input type="text" name="social_links" />
+
+      <input type="text" name="primary_goal" />
+      <input type="text" name="target_audience" />
+      <input type="text" name="has_existing_site" />
+      <input type="text" name="current_site_url" />
+      <input type="text" name="likes_dislikes" />
+      <input type="text" name="desired_launch" />
+
+      <!-- For checkboxes/radios, one is enough for indexing -->
+      <input type="text" name="pages" />
+      <input type="text" name="pages_other" />
+      <input type="text" name="features" />
+      <input type="text" name="features_other" />
+
+      <input type="text" name="inspiration" />
+
+      <input type="text" name="branding_status" />
+      <input type="text" name="brand_notes" />
+
+      <input type="text" name="about" />
+      <input type="text" name="services" />
+      <input type="text" name="team" />
+      <input type="text" name="testimonials" />
+
+      <input type="text" name="content_ready" />
+      <input type="text" name="extra_notes" />
+
+      <!-- honeypot must be present too -->
+      <input type="text" name="bot-field" />
     </form>
+
 
 
   </body>
