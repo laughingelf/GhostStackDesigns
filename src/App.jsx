@@ -19,6 +19,7 @@ import PrivacyPage from './pages/PrivacyPage'
 import JamesScottAgencyPage from './components/SalesPages/JamesScott'
 import MainIntakePage from './pages/MainIntakePage'
 import ThankYou from './pages/ThankYouPage'
+import LocalBizBooster from './pages/LocalBizBooster'
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/flat-rate-success' element={<SuccessfulFlatratePage />} />
           <Route path='/website-intake' element={<MainIntakePage />} />
           <Route path='/thank-you' element={<ThankYou />} />
+          <Route path='/business-booster' element={<LocalBizBooster/>} />
           <Route path='*' element={<NoPage/>} />
           {/* Sales Pages */}
           {/* <Route path='/428391/jamesscott' element={<JamesScottAgencyPage />} /> */}
