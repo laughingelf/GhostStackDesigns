@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 const API_BASE_URL = "https://local-biz-booster-api.onrender.com";
+
 const LocalBusinessBooster = () => {
   const [businessName, setBusinessName] = useState("");
   const [location, setLocation] = useState("");
   const [industry, setIndustry] = useState("");
   const [mainService, setMainService] = useState("");
+  const [yourWebsite, setYourWebsite] = useState(""); // your site URL (optional)
   const [competitorsText, setCompetitorsText] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -41,6 +43,7 @@ const LocalBusinessBooster = () => {
           location,
           industry,
           main_service: mainService,
+          website_url: yourWebsite || null, // IMPORTANT: must match backend field
           competitor_urls,
         }),
       });
@@ -50,6 +53,7 @@ const LocalBusinessBooster = () => {
       }
 
       const data = await res.json();
+      console.log("API /analyze response:", data); // DEBUG
       setResult(data);
     } catch (err) {
       console.error(err);
@@ -143,6 +147,21 @@ const LocalBusinessBooster = () => {
               </div>
             </div>
 
+            {/* Your website URL (optional) */}
+            <div>
+              <label className="block text-sm font-medium mb-1">
+                Your Website URL{" "}
+                <span className="text-xs text-slate-400">(optional)</span>
+              </label>
+              <input
+                type="url"
+                className="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                placeholder="https://your-business-website.com"
+                value={yourWebsite}
+                onChange={(e) => setYourWebsite(e.target.value)}
+              />
+            </div>
+
             <div>
               <label className="block text-sm font-medium mb-1">
                 Competitor URLs{" "}
@@ -186,6 +205,7 @@ const LocalBusinessBooster = () => {
         {/* Results */}
         {result && (
           <section className="space-y-8">
+            {/* Competitors Table */}
             <div>
               <h2 className="text-2xl font-bold mb-3">
                 Competitor Snapshot (Lite)
@@ -203,7 +223,7 @@ const LocalBusinessBooster = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {result.competitors.map((c) => (
+                    {result.competitors?.map((c) => (
                       <tr
                         key={c.url}
                         className="border-t border-slate-800 odd:bg-slate-950/40"
@@ -240,12 +260,85 @@ const LocalBusinessBooster = () => {
               </div>
             </div>
 
+            {/* Your Site at a Glance */}
+            {result.your_site && (
+              <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <h2 className="text-2xl font-bold mb-3">Your Site at a Glance</h2>
+
+                {result.your_site.error ? (
+                  <p className="text-sm text-red-300">
+                    We tried to scan your site{" "}
+                    <span className="font-mono">{result.your_site.url}</span>{" "}
+                    but ran into an issue: {result.your_site.error}
+                  </p>
+                ) : (
+                  <>
+                    <p className="text-sm text-slate-300 mb-4">
+                      This is a quick snapshot of{" "}
+                      <span className="text-emerald-300 font-semibold">
+                        {result.your_site.url}
+                      </span>{" "}
+                      based on the same checks we ran on your competitors.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4 text-sm">
+                      <div className="space-y-1">
+                        <p>
+                          <span className="font-semibold text-slate-200">
+                            Title:{" "}
+                          </span>
+                          {result.your_site.title || "—"}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-slate-200">
+                            Meta description:{" "}
+                          </span>
+                          {result.your_site.meta_description || "—"}
+                        </p>
+                      </div>
+                      <div className="space-y-1">
+                        <p>
+                          <span className="font-semibold text-slate-200">
+                            Testimonials section:{" "}
+                          </span>
+                          {result.your_site.has_testimonials ? "✅" : "—"}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-slate-200">
+                            Gallery / our work:{" "}
+                          </span>
+                          {result.your_site.has_gallery ? "✅" : "—"}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-slate-200">
+                            FAQ section:{" "}
+                          </span>
+                          {result.your_site.has_faq ? "✅" : "—"}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-slate-200">
+                            Clear call-to-action:{" "}
+                          </span>
+                          {result.your_site.has_clear_cta ? "✅" : "—"}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-slate-500 mt-4">
+                      For a deeper, customized review of your site and a
+                      step-by-step game plan, you can always book a strategy call
+                      with GhostStack.
+                    </p>
+                  </>
+                )}
+              </div>
+            )}
+
+            {/* Quick Wins */}
             <div>
               <h2 className="text-2xl font-bold mb-3">
                 Quick Wins for Your Website
               </h2>
               <ul className="space-y-2 text-sm text-slate-100">
-                {result.recommendations.map((r, i) => (
+                {result.recommendations?.map((r, i) => (
                   <li
                     key={i}
                     className="bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2"
@@ -261,6 +354,11 @@ const LocalBusinessBooster = () => {
                 and strategy sessions.
               </p>
             </div>
+
+            {/* OPTIONAL: Raw debug output (remove once you're happy) */}
+            {/* <pre className="text-[10px] text-slate-400 bg-slate-900/80 border border-slate-800 rounded-xl p-3 overflow-x-auto">
+              {JSON.stringify(result, null, 2)}
+            </pre> */}
           </section>
         )}
       </div>

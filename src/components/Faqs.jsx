@@ -56,7 +56,7 @@ const faqs = [
 
 const FAQPage = () => {
   return (
-    <section className="min-h-screen py-24 px-6 text-white">
+    <section aria-label="FAQ – Frequently Asked Questions" className="min-h-screen py-24 px-6 text-white">
       <div className="max-w-5xl mx-auto">
         <motion.h1
           className="text-4xl md:text-6xl font-bold header-font text-center mb-12 blue-word underline"
