@@ -39,11 +39,11 @@ const ContactForm = () => {
         setPhone("");
         setMessage("");
       })
-      .catch((error) => alert("Something went wrong. Please try again."));
+      .catch(() => alert("Something went wrong. Please try again."));
   };
 
   return (
-    <section className="w-full py-24 px-6 text-gray-800">
+    <section className="w-full py-20 px-6 text-gray-100 bg-[#111827]">
       <SuccessModal
         show={showModal}
         onClose={() => setShowModal(false)}
@@ -55,31 +55,95 @@ const ContactForm = () => {
         </p>
       </SuccessModal>
 
-      <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
-        {/* Logo Section */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] gap-12 items-start">
+        {/* Left: Info / Contact Details */}
         <motion.div
           initial={{ x: -40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full lg:w-1/2 text-center"
+          className="space-y-8"
         >
-          <img
-            src="/img/ghost-only-logo.png"
-            alt="GhostStack Designs Logo"
-            className="mx-auto w-96 h-auto"
-          />
+          <div className="space-y-3">
+            <h2 className="text-sm tracking-[0.25em] uppercase text-blue-300 header-font">
+              Contact GhostStack Designs
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold header-font">
+              Ready to get your business online (or fix what’s not working)?
+            </h3>
+            <p className="text-gray-300 header-font text-base md:text-lg leading-relaxed">
+              Whether you need a brand new site, a rebuild of something that’s not doing its job,
+              or you&apos;re just trying to figure out where to start, drop a message below. We
+              typically reply within <span className="font-semibold">one business day</span>.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="bg-slate-900/60 border border-slate-700 rounded-xl p-5 space-y-2">
+              <p className="text-xs font-semibold tracking-wide text-blue-300 uppercase">
+                What can we help with?
+              </p>
+              <ul className="text-sm text-gray-300 space-y-1 header-font">
+                <li>• New website or one-page build</li>
+                <li>• Redesign or performance issues</li>
+                <li>• GhostStack Express questions</li>
+                <li>• Ongoing updates & hosting</li>
+              </ul>
+            </div>
+
+            <div className="bg-slate-900/60 border border-slate-700 rounded-xl p-5 space-y-3">
+              <p className="text-xs font-semibold tracking-wide text-blue-300 uppercase">
+                Direct contact
+              </p>
+              <div className="text-sm text-gray-300 space-y-1 header-font">
+                <p>
+                  <span className="font-semibold">Email:</span>{" "}
+                  <a
+                    href="mailto:ghoststackdesigns@gmail.com"
+                    className="text-blue-300 hover:text-blue-200 underline-offset-2 hover:underline"
+                  >
+                    ghoststackdesigns@gmail.com
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold">Phone / Text:</span>{" "}
+                  <a
+                    href="tel:+1-000-000-0000"
+                    className="text-blue-300 hover:text-blue-200 underline-offset-2 hover:underline"
+                  >
+                    (972) 338-0991
+                  </a>
+                </p>
+              </div>
+              <div className="text-xs text-gray-400 header-font">
+                <p className="font-semibold text-gray-300">Open 24/7</p>
+                <p>GhostStack Designs is available around the clock. Send a message anytime—day or night—and we’ll respond as quickly as possible.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <img
+              src="/img/ghost-only-logo.png"
+              alt="GhostStack Designs Logo"
+              className="w-16 h-16 rounded-full bg-slate-900 border border-slate-700 p-2"
+            />
+            <div className="text-sm text-gray-300 header-font">
+              <p className="font-semibold text-gray-100">Websites for the working man.</p>
+              <p>Custom, no-template builds that actually move the needle for small businesses.</p>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Form Section */}
+        {/* Right: Form */}
         <motion.form
           onSubmit={handleSubmit}
           name="contact"
           method="POST"
-          action='/'
+          action="/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          className="w-full lg:w-1/2 bg-white p-8 rounded-xl text-gray-800 shadow-lg"
+          className="w-full bg-white p-8 rounded-2xl text-gray-800 shadow-2xl shadow-black/40"
           initial={{ x: 40, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
@@ -92,13 +156,20 @@ const ContactForm = () => {
             </label>
           </p>
 
-          <h2 className="text-3xl font-bold mb-6 header-font text-center">
-            Let’s Talk About Your Project
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 header-font text-center">
+            Start the conversation
           </h2>
+          <p className="text-sm text-gray-500 mb-6 text-center header-font">
+            Tell us a bit about your business and what you&apos;re trying to build. We&apos;ll
+            review your message and follow up with next steps and a clear game plan.
+          </p>
 
           <div className="space-y-5">
             <div>
-              <label htmlFor="name" className="block text-lg mb-1 font-medium header-font">
+              <label
+                htmlFor="name"
+                className="block text-sm md:text-base mb-1 font-medium header-font"
+              >
                 Name <span className="text-red-500">*</span>
               </label>
               <input
@@ -108,12 +179,15 @@ const ContactForm = () => {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 px-4 py-2.5 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-lg mb-1 font-medium header-font">
+              <label
+                htmlFor="email"
+                className="block text-sm md:text-base mb-1 font-medium header-font"
+              >
                 Email <span className="text-red-500">*</span>
               </label>
               <input
@@ -123,12 +197,15 @@ const ContactForm = () => {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full border border-gray-300 px-4 py-2.5 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-lg mb-1 font-medium header-font">
+              <label
+                htmlFor="phone"
+                className="block text-sm md:text-base mb-1 font-medium header-font"
+              >
                 Phone Number <span className="text-red-500">*</span>
               </label>
               <input
@@ -138,12 +215,15 @@ const ContactForm = () => {
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full text-gray-800 border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full text-gray-800 border border-gray-300 px-4 py-2.5 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-lg mb-1 font-medium header-font">
+              <label
+                htmlFor="message"
+                className="block text-sm md:text-base mb-1 font-medium header-font"
+              >
                 Message <span className="text-red-500">*</span>
               </label>
               <textarea
@@ -153,8 +233,8 @@ const ContactForm = () => {
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
+                className="w-full border border-gray-300 px-4 py-2.5 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
             </div>
           </div>
 
@@ -165,6 +245,10 @@ const ContactForm = () => {
             >
               Send Message
             </button>
+            <p className="mt-3 text-xs text-gray-500 header-font">
+              By submitting this form, you agree to be contacted by GhostStack Designs about your
+              project. No spam, ever.
+            </p>
           </div>
         </motion.form>
       </div>
