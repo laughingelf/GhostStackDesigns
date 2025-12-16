@@ -117,7 +117,7 @@ const ContactForm = () => {
               </div>
               <div className="text-xs text-gray-400 header-font">
                 <p className="font-semibold text-gray-300">Open 24/7</p>
-                <p>GhostStack Designs is available around the clock. Send a message anytime—day or night—and we’ll respond as quickly as possible.</p>
+                <p>We’re available 24/7. No ticket systems, no corporate delays—just real people who get back to you fast.</p>
               </div>
             </div>
           </div>
