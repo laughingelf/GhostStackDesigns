@@ -10,7 +10,7 @@ const HeroSection = ({
   backgroundImage = "/img/heroImg.png",
 }) => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[45vh] overflow-hidden flex items-center justify-center text-center">
+    <section className="relative w-full h-[60vh] md:h-[65vh] overflow-hidden flex items-center justify-center text-center">
       
       {/* Background Image */}
       <img
