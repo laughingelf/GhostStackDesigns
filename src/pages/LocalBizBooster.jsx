@@ -9,7 +9,7 @@ const LocalBizBooster = () => {
     <HeroSection
       title="Boost Your Local Business Website in Minutes"
       primaryText="View Website Packages"
-      primaryLink="pricing"          // anchor to the form section
+      primaryLink="/pricing"          
       secondaryText="Schedule a Call"
       secondaryLink="/contact"
       backgroundImage="/img/heroImg.png"
