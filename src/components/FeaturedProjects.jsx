@@ -7,21 +7,21 @@ const projects = [
   {
     name: "Lone Star Property Maintenance",
     description:
-      "Lone Star Property Maintenance provides expert exterior services throughout Texas — from pressure washing and fencing to full property clean-ups. Their custom-built 5-page website showcases services, builds credibility, and makes it simple for customers to get in touch.",
+      "Lone Star Property Maintenance provides expert exterior services throughout Texas — from pressure washing and fencing to full property clean-ups. Their custom 5-page small business website showcases services, builds credibility, and makes it simple for customers to get in touch.",
     image: "/img/lonestar.png",
     url: "https://lonestarpropertymaintenance.com/",
   },
   {
     name: "Luma SportznFun",
     description:
-      "Luma SportznFun brings kids and families together through sports, games, and community events. Their vibrant multi-page website showcases programs, promotes upcoming events, and makes it easy for parents to get involved and stay connected.",
+      "Luma SportznFun brings kids and families together through sports, games, and community events. Their vibrant multi-page website highlights programs, promotes upcoming events, and makes it easy for parents to get involved and stay connected.",
     image: "/img/luma.png",
     url: "https://www.sportznfun.com/",
   },
   {
     name: "Reclaim Wellness Support",
     description:
-      "Reclaim Wellness Support is a veteran-owned massage practice focused on accessible care for veterans and low-income families. Their custom 5-page site highlights the mission, services, and makes booking simple through a calming, user-friendly design.",
+      "Reclaim Wellness Support is a veteran-owned massage practice focused on accessible care for veterans and low-income families. Their custom 5-page website shares their mission, outlines services, and makes booking simple through a calming, user-friendly design.",
     image: "/img/reclaim.png",
     url: "https://reclaimwellnesssupport.org/",
   },
@@ -45,7 +45,7 @@ const FeaturedProjects = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="w-full text-white py-24 px-6">
+    <section className="w-full text-white py-24 px-6" id="featured-projects">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ y: -20, opacity: 0 }}
@@ -54,7 +54,7 @@ const FeaturedProjects = () => {
           transition={{ duration: 0.5 }}
           className="blue-word underline text-5xl uppercase tracking-wide mb-2 header-font"
         >
-          Featured Projects
+          Featured Small Business Website Projects
         </motion.h2>
 
         <motion.p
@@ -64,7 +64,9 @@ const FeaturedProjects = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-gray-300 max-w-2xl mx-auto header-font"
         >
-          Check out a few sites we've built. Each one custom-designed to help our clients grow their business and stand out online.
+          Here are a few recent small business websites we’ve built. Each one is
+          custom-designed to match the brand, support their goals, and help them
+          stand out online.
         </motion.p>
       </div>
 
@@ -83,8 +85,8 @@ const FeaturedProjects = () => {
               >
                 <img
                   src={project.image}
-                  alt={project.name}
-                  className="w-full md:h-72 h-38  w-auto md:object-cover"
+                  alt={`${project.name} small business website by GhostStack Designs`}
+                  className="w-full md:h-72 h-38 w-auto md:object-cover"
                 />
                 <div className="p-6 text-left">
                   <h3 className="text-2xl text-gray-800 font-semibold mb-2 header-font underlinef">

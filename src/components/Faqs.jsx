@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const faqs = [
   {
-    question: "What’s included in the GhostStack Express package?",
+    question: "What’s included in the GhostStack Express website package?",
     answer:
-      "The Express package includes a custom one-page website, a contact form, mobile-responsive layout, basic SEO setup, and optional add-ons like gallery, reviews, logo, and social media setup.",
+      "The GhostStack Express package includes a custom one-page small business website, a contact form, mobile-responsive layout, basic SEO setup, and optional add-ons like a gallery, reviews, logo design, and social media setup.",
   },
   {
-    question: "What’s the turnaround time for a website?",
+    question: "How long does it take to build a small business website?",
     answer:
-      "GhostStack Express sites are delivered within 48 hours. Custom or multi-page builds typically take 1–3 weeks depending on complexity.",
+      "GhostStack Express websites are delivered within 48 hours. Custom or multi-page small business websites typically take 1–3 weeks depending on complexity and features.",
   },
   {
     question: "Do I need to provide my own domain?",
@@ -32,9 +33,9 @@ const faqs = [
       "We specialize in custom HTML/CSS/React builds for speed and performance, but also offer Wix-based sites for clients who want drag-and-drop editing.",
   },
   {
-    question: "Do you offer hosting and support?",
+    question: "Do you offer hosting and ongoing website support?",
     answer:
-      "Yes. We provide fully managed hosting with updates, backups, and support starting at $25/month. You don’t have to lift a finger.",
+      "Yes. We provide fully managed website hosting with updates, backups, and support starting at $25/month so small business owners don’t have to worry about maintenance.",
   },
   {
     question: "What if I already have a logo or domain?",
@@ -52,6 +53,23 @@ const faqs = [
       "Pick a package from our pricing page and hit 'Start Now' — or schedule a call if you'd like to talk it through first. We’re here to help."
   }
 ];
+
+<Helmet>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    })}
+  </script>
+</Helmet>
 
 
 const FAQPage = () => {
@@ -77,9 +95,9 @@ const FAQPage = () => {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               className="bg-gray-200  border border-white/10 rounded-xl p-6"
             >
-              <h3 className="text-2xl md:text-3xl font-semibold header-font mb-2 blue-word">
+              <h2 className="text-2xl md:text-3xl font-semibold header-font mb-2 blue-word">
                 {faq.question}
-              </h3>
+              </h2>
               <p className="text-xl par-font text-gray-800">{faq.answer}</p>
             </motion.div>
           ))}

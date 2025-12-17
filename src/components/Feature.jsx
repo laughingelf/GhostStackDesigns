@@ -6,22 +6,22 @@ const features = [
   {
     icon: <Briefcase size={32} className="blue-word mb-3" />,
     title: "Small Business Focused",
-    text: "Everything we build is tailored to the needs of real, working-class businesses.",
+    text: "Every website is built for real, working-class small businesses — not generic templates or big corporate brands.",
   },
   {
     icon: <Code size={32} className="blue-word mb-3" />,
     title: "Clean, Custom Code",
-    text: "No bloated themes or shortcuts — just handcrafted, responsive design.",
+    text: "No bloated themes or drag-and-drop builders — just handcrafted, responsive code that’s easy to scale and update.",
   },
   {
     icon: <Rocket size={32} className="blue-word mb-3" />,
-    title: "Fast & Optimized",
-    text: "Speed matters. We make sure your site loads quickly and ranks well.",
+    title: "Fast, Mobile-Friendly & SEO-Ready",
+    text: "Speed matters. We optimize your small business website for fast load times, mobile devices, and better search visibility.",
   },
   {
     icon: <ThumbsUp size={32} className="blue-word mb-3" />,
     title: "Easy to Maintain",
-    text: "We build it right the first time, so updates and edits are a breeze.",
+    text: "We build it right from day one, so ongoing updates, content changes, and small tweaks are simple and stress-free.",
   },
 ];
 
@@ -46,7 +46,7 @@ const FeatureOverview = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-4xl md:text-5xl text-gray-900 mb-6 header-font"
         >
-          $0 DOWN – CUSTOM WEBSITE & ONGOING SUPPORT FOR $175/mo
+          $0 Down Small Business Website – Custom 5-Page Design for $175/mo
         </motion.h2>
 
         <motion.p
@@ -56,11 +56,14 @@ const FeatureOverview = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-xl text-gray-800 max-w-3xl mx-auto par-font mb-8"
         >
-          Get a professionally built, fully responsive 5-page website with no upfront costs. For $175/month, 
-          you'll receive design, development, hosting, and content updates each month — all backed by a 6-month 
-          agreement. Need more than 5 pages? No problem — we’ll provide custom pricing based on your project’s 
-          size and needs. You’ll also get reliable support and ongoing updates to keep your site sharp and running 
-          smoothly.
+          Get a professionally built, fully responsive{" "}
+          <strong>5-page small business website</strong> with no upfront costs.
+          For <strong>$175/month</strong>, you get custom design, development,
+          secure hosting, and monthly content updates, all under a simple
+          6-month agreement. Need more than 5 pages or extra functionality?
+          We’ll create a custom web design package based on your business goals.
+          You’ll also get reliable support and ongoing improvements to keep
+          your site fast, modern, and looking legit online.
         </motion.p>
 
         {/* CTA Button */}
@@ -74,7 +77,7 @@ const FeatureOverview = () => {
             to="/pricing"
             className="blueon-white-btn inline-block text-white px-6 py-3 text-lg rounded-xl font-medium header-font shadow-lg shadow-gray-800 hover:shadow-xl hover:scale-105 transition"
           >
-            View Pricing Options
+            View Website Pricing & Plans
           </Link>
         </motion.div>
       </div>

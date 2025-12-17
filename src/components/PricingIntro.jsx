@@ -11,8 +11,9 @@ const PricingIntroSection = () => {
           transition={{ duration: 0.6 }}
           className="blue-word text-5xl md:text-7xl font-bold mb-6 header-font"
         >
-          Simple, Transparent Pricing
+          Small Business Website Pricing Made Simple
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -20,11 +21,15 @@ const PricingIntroSection = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lg md:text-xl text-gray-300 par-font"
         >
-          At GhostStack Designs, we know that every small business has unique needs and budgets — and 
-          your website should reflect that. That’s why we offer flexible website pricing that fits your 
-          goals, timeline, and budget. Whether you’re looking for a custom-coded website for blazing 
-          speed and top-tier SEO, a Wix website for easy management, or a secure e-commerce store, we 
-          have a plan for you.
+          At GhostStack Designs, we know every small business has unique needs,
+          goals, and budgets — and your website should reflect that. That’s why
+          we offer flexible, transparent pricing for{" "}
+          <strong>custom small business websites</strong>, including
+          hand-coded designs for top performance,{" "}
+          <strong>Wix website development</strong> for easy management, and{" "}
+          <strong>secure e-commerce builds</strong> for businesses ready to sell
+          online. No hidden fees, no surprise costs — just clean, fast, SEO-ready
+          websites built to help your business grow.
         </motion.p>
       </div>
     </section>

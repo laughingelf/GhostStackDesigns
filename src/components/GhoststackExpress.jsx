@@ -14,6 +14,7 @@ const GhostStackExpressPromo = () => {
   return (
     <section className="bg-white py-20 px-6 text-gray-900">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -22,12 +23,16 @@ const GhostStackExpressPromo = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 header-font">
-            GhostStack Express: A Website in Just 48 Hours
+            Fast, Affordable One-Page Websites for Small Businesses
           </h2>
+
           <p className="text-lg text-gray-700 mb-6 par-font">
-            Need a professional website—fast? <span className="text-xl blue-word underline">GhostStack Express</span> delivers a
-            custom one-page site in just two days. Perfect for freelancers, side hustlers, small shops,
-            and anyone who needs to make a strong digital impression—without the wait or complexity.
+            <span className="text-xl blue-word underline">GhostStack Express</span> is our 
+            rapid-build option, perfect for small businesses that need a clean, 
+            professional one-page website <strong>in just 48 hours</strong>. 
+            It’s ideal for trades, freelancers, side hustlers, local shops, and 
+            anyone needing an online presence without the cost or long timelines 
+            of a full custom build.
           </p>
 
           <ul className="space-y-3 mb-8">
@@ -55,11 +60,12 @@ const GhostStackExpressPromo = () => {
           viewport={{ once: true }}
         >
           <img
-            src="/img/ghostexpress-ex2.png" // Replace with actual image path
-            alt="GhostStack Express Preview"
+            src="/img/ghostexpress-ex2.png"
+            alt="One-page website design example from GhostStack Express - fast 48-hour build for small businesses"
             className="w-full max-w-md mx-auto rounded-2xl"
           />
         </motion.div>
+
       </div>
     </section>
   );
