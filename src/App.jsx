@@ -21,6 +21,7 @@ import MainIntakePage from './pages/MainIntakePage'
 import ThankYou from './pages/ThankYouPage'
 import LocalBizBooster from './pages/LocalBizBooster'
 import PromoLandingPage from './pages/PromoLandingPage'
+import FrogOnAHogDemoPage from './components/SalesPages/FrogOnAHog'
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Route path='/ghoststack-qr-landing' element={<PromoLandingPage />} />
           <Route path='/thank-you' element={<ThankYou />} />
           <Route path='/business-booster' element={<LocalBizBooster/>} />
+          <Route path='/58628/frogonahog' element={<FrogOnAHogDemoPage />} />
           <Route path='*' element={<NoPage/>} />
           {/* Sales Pages */}
           {/* <Route path='/428391/jamesscott' element={<JamesScottAgencyPage />} /> */}
