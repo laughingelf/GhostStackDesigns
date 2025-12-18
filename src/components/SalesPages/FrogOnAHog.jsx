@@ -151,7 +151,7 @@ const Section = ({ id, kicker, title, sub, children }) => (
         <h2 className="text-3xl font-black tracking-tight text-black sm:text-4xl">
           {title}
         </h2>
-        {sub ? <p className="mt-3 max-w-2xl text-black/70">{sub}</p> : null}
+        {sub ? <p className="mt-3 max-w-2xl text-black/70 mx-auto">{sub}</p> : null}
       </motion.div>
       {children}
     </div>
