@@ -20,6 +20,7 @@ import JamesScottAgencyPage from './components/SalesPages/JamesScott'
 import MainIntakePage from './pages/MainIntakePage'
 import ThankYou from './pages/ThankYouPage'
 import LocalBizBooster from './pages/LocalBizBooster'
+import PromoLandingPage from './pages/PromoLandingPage'
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/start-express-project' element={<StartExpressProject />} />
           <Route path='/flat-rate-success' element={<SuccessfulFlatratePage />} />
           <Route path='/website-intake' element={<MainIntakePage />} />
+          <Route path='/ghoststack-qr-landing' element={<PromoLandingPage />} />
           <Route path='/thank-you' element={<ThankYou />} />
           <Route path='/business-booster' element={<LocalBizBooster/>} />
           <Route path='*' element={<NoPage/>} />
